@@ -5,13 +5,20 @@
         - dependencias
         - scripts
 
-#  Que queremos?
+#  Que queremos?  🔲✅🕗
     - un backend estructurado
       - express
-        - routes
-        - controllers
-        - models
+        - 🔲 routes
+              Una ruta es un punto de acceso al API - endpoint - server - backend
+              https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes
+        - 🔲 controllers
+        - 🔲 models
           - conectados a mongo
 
 # Instalar babel para poder usar imports
 [@babel/cli, @babel/core, @babel/preset-env y @babel/node](https://mugan86.medium.com/configurar-babel-en-nodejs-525fd101990b)
+
+
+# Trabajo con Branches de git 
+  - release/structure
+    git checkout -b release/structure
