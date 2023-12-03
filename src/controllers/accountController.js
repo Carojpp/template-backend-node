@@ -1,23 +1,13 @@
 /*
 ¿Que debo hacer? 
-    Una funcion llamada getAccounts que devuelva el arreglo llamado accountsDB
+   
 */
-const accountDB = [
-    {
-        id: '1',
-        name: 'Cuenta One',
-        createdAt: new Date()
-    },
-    {
-        id: '2',
-        name: 'Cuenta Two',
-        createdAt: new Date()
-    }
-]
+import { getAccountsModels } from "../models/accountModel.js"
 
 const getAccounts = () => {
     console.log('file: accountController.js - getAccounts')
-    return accountDB
+    const accounts = getAccountsModels()
+    return accounts
 }
 
 export {
