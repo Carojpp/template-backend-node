@@ -1,27 +1,16 @@
 import { Router } from 'express'
+import { getAccounts } from '../controllers/accountController.js';
 
 const router = new Router()
 
 console.log('loding accountRoutes');
 
-const accountDB = [
-    {
-        id: '1',
-        name: 'Cuenta One',
-        createdAt: new Date()
-    },
-    {
-        id: '2',
-        name: 'Cuenta Two',
-        createdAt: new Date()
-    }
-]
 
 /* get all accounts */
 router.get('/accounts', (req, res) => {
     console.log('file: accountRoutes.js -> /accounts')
-    
-    res.send(accountDB)
+    const accounts = getAccounts()
+    res.send(accounts) 
 })
 
 /* create an account */

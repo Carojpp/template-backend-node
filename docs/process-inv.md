@@ -12,6 +12,7 @@
               Una ruta es un punto de acceso al API - endpoint - server - backend
               https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes
         - 🔲 controllers
+            - Una funcion llamada getAccounts que devuelva el arreglo llamado accountsDB
         - 🔲 models
           - conectados a mongo
 
