@@ -10,6 +10,7 @@
       - express
         - 🔲 routes
               Una ruta es un punto de acceso al API - endpoint - server - backend
+              https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes
         - 🔲 controllers
         - 🔲 models
           - conectados a mongo
