@@ -5,12 +5,13 @@
         - dependencias
         - scripts
 
-#  Que queremos?
+#  Que queremos?  🔲✅🕗
     - un backend estructurado
       - express
-        - routes
-        - controllers
-        - models
+        - 🔲 routes
+              Una ruta es un punto de acceso al API - endpoint - server - backend
+        - 🔲 controllers
+        - 🔲 models
           - conectados a mongo
 
 # Instalar babel para poder usar imports
