@@ -13,7 +13,7 @@
               https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes
         - ✅ controllers
              Una funcion llamada getAccounts que devuelva el arreglo llamado accountsDB
-        - 🔲 models
+        - ✅ models
              Se ingresa la BD y se crea una funcion getAccountModels que retorna todos los    accounts
           - conectados a mongo
 
@@ -30,4 +30,3 @@
   -Git add .
   -Git commit -m 'CM-00X XXX'
   -Git push origin NOMBRE DE LA RAMA
-  
