@@ -2,11 +2,13 @@ import express from 'express';
 
 /* call routes */
 import accountRoutes from './routes/accountRoutes.js'
+import userRoutes from './routes/userRoutes.js'
 
 const app = express();
 const PORT = 7000;
 
 app.use(accountRoutes)
+app.use(userRoutes)
 
 app.get('/back', (req, res)  => {
     res.send('Esto es un cambio')

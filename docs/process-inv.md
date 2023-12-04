@@ -24,3 +24,10 @@
 # Trabajo con Branches de git 
   - release/structure
     git checkout -b release/structure
+
+# Comando para subir commit a GitHub
+  -Git status
+  -Git add .
+  -Git commit -m 'CM-00X XXX'
+  -Git push origin NOMBRE DE LA RAMA
+  
