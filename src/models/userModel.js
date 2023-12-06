@@ -29,6 +29,14 @@ const getUsersModels = () => {
     console.log ('file: userModel.js - getUsersModels')
     return userDB
 }
+
+const createUserModels = (params) => {
+    console.log ('file: userModel.js - getUsersModels')
+    const { name, email, phone, country} = params
+    userDB.push({ name, email, phone, country})
+    return userDB
+}
+
 export {
-    getUsersModels
+    getUsersModels, createUserModels
 }

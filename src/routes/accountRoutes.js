@@ -15,7 +15,12 @@ router.get('/accounts', (req, res) => {
 
 /* create an account */
 router.post('/createAccount', (req, res) => {
-
+    const { body } = req
+    console.log({ body })
+    res.send({
+        message: 'Create account', 
+        ...body
+    })
 })
 
 export default router
