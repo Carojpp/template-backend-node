@@ -21,6 +21,13 @@ const getAccountsModels = () => {
     return accountDB
 }
 
+const createAccountModels = (params) => {
+    console.log ('file: accountModel.js - getAccountModels')
+    const { name } = params
+    accountDB.push({ name })
+    return accountDB
+}
+
 export {
-    getAccountsModels
+    getAccountsModels, createAccountModels
 }

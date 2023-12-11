@@ -1,10 +1,9 @@
 import { Router } from 'express'
-import { getAccounts } from '../controllers/accountController.js';
+import { getAccounts, createAccount } from '../controllers/accountController.js';
 
 const router = new Router()
 
 console.log('loding accountRoutes');
-
 
 /* get all accounts */
 router.get('/accounts', (req, res) => {
@@ -17,9 +16,13 @@ router.get('/accounts', (req, res) => {
 router.post('/createAccount', (req, res) => {
     const { body } = req
     console.log({ body })
+    const { name } = body
+    const accounts = createAccount({name})
+    console.log({ name })
     res.send({
         message: 'Create account', 
-        ...body
+        ...body,
+        accounts
     })
 })
 
