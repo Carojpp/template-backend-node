@@ -6,19 +6,30 @@ que debo hacer para inciar?
 const accountDB = [ //base de datos
     {
         id: '1',
-        name: 'Cuenta One',
+        name: 'One',
         createdAt: new Date()
     },
     {
         id: '2',
-        name: 'Cuenta Two',
+        name: 'Two',
         createdAt: new Date()
     }
 ]
 
 const getAccountsModels = () => { // declaramos la función getAccountsModels 
     console.log('file: accountModel.js - getAccountsModels')
-    return accountDB // me retorna la información que tenemos en la base de datos
+    return accountDB // me retornar el objeto accountDB que el objeto que contiene la información de los accounts (Id, name, createdAt)
+}
+
+//Estamos creando una ruta que nos permita filtar nuestro arreglo(db) por el nombre del account
+
+const getAccountByNameModels = (name) => { //  
+    console.log('file: accountModel.js - getAccountByNameModels')
+    const result = accountDB.filter((account) => account.name === name); //filtramos nuestra base de datos por el parametro name es decir buscamos dentro de nuestra base de datos los accounts que coinciden con el nombre que estamos mandando desde postman
+    if (result.length===0){ // si no encuentra resultados el arreglo es vacio
+        return `No se encontraron resultados para ${name}` //si no coincide el nombre regresa este mensaje y lo vemos en postman
+    }
+    return result // 
 }
 
 const createAccountModels = (params) => { //creamos la funcion con parametros (como nombres o los datos que necesitemos crear)
@@ -29,5 +40,5 @@ const createAccountModels = (params) => { //creamos la funcion con parametros (c
 }
 
 export {
-    getAccountsModels, createAccountModels // exporta las funciones que declaramos anteriormente
+    getAccountsModels, getAccountByNameModels, createAccountModels // exporta las funciones que declaramos anteriormente
 }
