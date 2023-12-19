@@ -1,4 +1,4 @@
-import { getUsersModels, createUserModels } from "../models/userModel.js"
+import { getUsersModels, getUserEmailModels, createUserModels } from "../models/userModel.js"
 
 
 const getUsers = () => {
@@ -7,6 +7,11 @@ const getUsers = () => {
     return users
 }
 
+const getUserEmail = (email) => { // creamos la funcion y a esta le esta pasando el parametro email
+    console.log({ email, pos:'getUserEmail' }) //añadimos la propiedad pos
+    const userEmail = getUserEmailModels(email) // envio el parametro a models
+    return userEmail
+}
 
 const createUser = (params) => {
     console.log('file: userController.js - getUsers')
@@ -15,5 +20,5 @@ const createUser = (params) => {
 }
 
 export {
-    getUsers, createUser
+    getUsers, getUserEmail, createUser
 }

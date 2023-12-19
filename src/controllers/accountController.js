@@ -12,7 +12,7 @@ const getAccounts = () => { // declaramos la funcion
 
 const getAccountByName = (name) => { //creamos la función y le esta pasando el parametro name para buscar en la db en models
     console.log({ name, pos:'getAccountByName' })
-    const accountFound = getAccountByNameModels(name)
+    const accountFound = getAccountByNameModels(name) // envie el parametro a models
     return accountFound
 }
 

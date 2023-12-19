@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getUsers, createUser } from '../controllers/userController.js';
+import { getUsers, getUserEmail, createUser } from '../controllers/userController.js';
 
 const router = new Router();
 
@@ -10,6 +10,17 @@ router.get('/users', (req, res) => {
     console.log('file: userRoutes.js -> /users')
     const users = getUsers()    
     res.send(users);
+})
+
+//Estamos creando una ruta que nos permita filtar nuestro arreglo(db) por el email del users
+
+router.get('/users/:email', (req,res) => { // creamos la ruta para buscar por el email
+    console.log('file: userRoutes.js -> email')
+    const { params,query } = req // desestructuramos la variable req, obtenemos la variable params y dentro de esta se encuenta el valor de email de la URL
+    console.log({params,query})
+    const { email } = params // desestruturo el parametro email
+    const result = getUserEmail(email)//envie el parametro email al controlador
+    res.send({result, route:'/users/:email'}) // tenemos un objeto como respuesta, email contiene el valor de la URL que solicitamos
 })
 
 router.post('/createUser', (req, res) => {
