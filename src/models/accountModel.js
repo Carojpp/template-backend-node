@@ -21,8 +21,6 @@ const getAccountsModels = () => { // declaramos la función getAccountsModels
     return accountDB // me retornar el objeto accountDB que el objeto que contiene la información de los accounts (Id, name, createdAt)
 }
 
-//Estamos creando una ruta que nos permita filtar nuestro arreglo(db) por el nombre del account
-
 const getAccountByNameModels = (name) => { //  
     console.log('file: accountModel.js - getAccountByNameModels')
     const result = accountDB.filter((account) => account.name === name); //filtramos nuestra base de datos por el parametro name es decir buscamos dentro de nuestra base de datos los accounts que coinciden con el nombre que estamos mandando desde postman

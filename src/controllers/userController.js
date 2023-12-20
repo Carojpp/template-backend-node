@@ -1,4 +1,4 @@
-import { getUsersModels, getUserEmailModels, createUserModels } from "../models/userModel.js"
+import { getUsersModels, getUserEmailModels, getUserTelefonoModels, createUserModels } from "../models/userModel.js"
 
 
 const getUsers = () => {
@@ -13,6 +13,12 @@ const getUserEmail = (email) => { // creamos la funcion y a esta le esta pasando
     return userEmail
 }
 
+const getUserTelefono = (phone) => { // Creo la funcion y a esta le pasamos el parametro telfono
+    console.log({ phone, pos:'getUserTelefono' }) 
+    const userTelefono = getUserTelefonoModels(phone) // envio el parametro a models
+    return userTelefono
+}
+
 const createUser = (params) => {
     console.log('file: userController.js - getUsers')
     const users = createUserModels(params)
@@ -20,5 +26,5 @@ const createUser = (params) => {
 }
 
 export {
-    getUsers, getUserEmail, createUser
+    getUsers, getUserEmail, getUserTelefono, createUser
 }

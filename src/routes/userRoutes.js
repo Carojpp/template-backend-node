@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getUsers, getUserEmail, createUser } from '../controllers/userController.js';
+import { getUsers, getUserEmail, getUserTelefono, createUser } from '../controllers/userController.js';
 
 const router = new Router();
 
@@ -21,6 +21,15 @@ router.get('/users/:email', (req,res) => { // creamos la ruta para buscar por el
     const { email } = params // desestruturo el parametro email
     const result = getUserEmail(email)//envie el parametro email al controlador
     res.send({result, route:'/users/:email'}) // tenemos un objeto como respuesta, email contiene el valor de la URL que solicitamos
+})
+
+router.get('/usersTelefono/:phone', (req,res) => { // creamos la ruta para buscar por telefono, no son necesarios los : en la ruta de la URl para que me traiga la información
+    console.log('file: userRoutes.js -> phone')
+    const { params,query } = req // desestructuramos la variable req, 
+    console.log({params,query})
+    const { phone } = params // desestructuro el parametro telefono (este debe ser igual al nombre que registra en la base de datos en este caso como phone)
+    const result = getUserTelefono(phone) // envio el parametro telefono al controlador
+    res.send({result, route:'/usersTelefono/:phone'}) // se añade la propiedad route con el valor de la ruta
 })
 
 router.post('/createUser', (req, res) => {
